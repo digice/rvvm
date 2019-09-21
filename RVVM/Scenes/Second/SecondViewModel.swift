@@ -9,9 +9,11 @@
 import Foundation
 
 class SecondViewModel {
-    
+
+    // MARK: - Properties
+
     /// The router that handles our navigation
-    let router: RootRouter
+    let router: SecondRouter
 
     /// Text for the "Back" button
     let backText = "Back to First"
@@ -19,9 +21,12 @@ class SecondViewModel {
     /// Text for the "Next" button
     let nextText = "Next to Third"
 
+    // MARK: - SecondViewModel
+    
     /// Initialize the ViewModel
+    /// 
     /// - Parameter router: The The router that handles our navigation
-    init(router: RootRouter) {
+    init(router: SecondRouter) {
         self.router = router
     }
 

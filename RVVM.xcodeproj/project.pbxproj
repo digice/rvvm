@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B2A005F823367873009DDB0D /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A005F723367873009DDB0D /* RootRouter.swift */; };
+		B2A005FA2336859F009DDB0D /* FirstRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A005F92336859F009DDB0D /* FirstRouter.swift */; };
+		B2A005FC233685B8009DDB0D /* SecondRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A005FB233685B8009DDB0D /* SecondRouter.swift */; };
+		B2A005FE233685D2009DDB0D /* ThirdRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A005FD233685D2009DDB0D /* ThirdRouter.swift */; };
+		B2A209FF2336AB8C00BE104C /* UIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A209FE2336AB8C00BE104C /* UIRouter.swift */; };
 		B2C308B82335D6E900015EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C308B72335D6E900015EA2 /* AppDelegate.swift */; };
 		B2C308C12335D6EB00015EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C308C02335D6EB00015EA2 /* Assets.xcassets */; };
 		B2C308C42335D6EB00015EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C308C22335D6EB00015EA2 /* LaunchScreen.storyboard */; };
@@ -24,6 +28,10 @@
 
 /* Begin PBXFileReference section */
 		B2A005F723367873009DDB0D /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		B2A005F92336859F009DDB0D /* FirstRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstRouter.swift; sourceTree = "<group>"; };
+		B2A005FB233685B8009DDB0D /* SecondRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondRouter.swift; sourceTree = "<group>"; };
+		B2A005FD233685D2009DDB0D /* ThirdRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdRouter.swift; sourceTree = "<group>"; };
+		B2A209FE2336AB8C00BE104C /* UIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRouter.swift; sourceTree = "<group>"; };
 		B2C308B42335D6E900015EA2 /* RVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C308B72335D6E900015EA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2C308C02335D6EB00015EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +106,7 @@
 			children = (
 				B2C308D123364C2D00015EA2 /* FirstViewController.swift */,
 				B2C308D723364C9B00015EA2 /* FirstViewModel.swift */,
+				B2A005F92336859F009DDB0D /* FirstRouter.swift */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -107,6 +116,7 @@
 			children = (
 				B2C308D323364C5700015EA2 /* SecondViewController.swift */,
 				B2C308D923364CBA00015EA2 /* SecondViewModel.swift */,
+				B2A005FB233685B8009DDB0D /* SecondRouter.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -116,6 +126,7 @@
 			children = (
 				B2C308D523364C7D00015EA2 /* ThirdViewController.swift */,
 				B2C308DB23364CDB00015EA2 /* ThirdViewModel.swift */,
+				B2A005FD233685D2009DDB0D /* ThirdRouter.swift */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -125,6 +136,7 @@
 			children = (
 				B2C308B72335D6E900015EA2 /* AppDelegate.swift */,
 				B2C308E0233662AE00015EA2 /* Button.swift */,
+				B2A209FE2336AB8C00BE104C /* UIRouter.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -207,15 +219,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2A005FA2336859F009DDB0D /* FirstRouter.swift in Sources */,
 				B2C308D423364C5700015EA2 /* SecondViewController.swift in Sources */,
 				B2C308DE23364DE900015EA2 /* NavigationController.swift in Sources */,
 				B2C308D823364C9B00015EA2 /* FirstViewModel.swift in Sources */,
+				B2A005FE233685D2009DDB0D /* ThirdRouter.swift in Sources */,
 				B2C308B82335D6E900015EA2 /* AppDelegate.swift in Sources */,
+				B2A209FF2336AB8C00BE104C /* UIRouter.swift in Sources */,
 				B2C308DC23364CDB00015EA2 /* ThirdViewModel.swift in Sources */,
 				B2C308D623364C7D00015EA2 /* ThirdViewController.swift in Sources */,
 				B2A005F823367873009DDB0D /* RootRouter.swift in Sources */,
 				B2C308DA23364CBA00015EA2 /* SecondViewModel.swift in Sources */,
 				B2C308E1233662AE00015EA2 /* Button.swift in Sources */,
+				B2A005FC233685B8009DDB0D /* SecondRouter.swift in Sources */,
 				B2C308D223364C2D00015EA2 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

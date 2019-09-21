@@ -10,47 +10,48 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    // MARK: - Properties
+    
     /// Where we keep the view's data
     let viewModel: ThirdViewModel
+    
+    // MARK: - Outlets / Subviews
     
     /// Navigate to the previous view
     let backButton = Button()
     
+    // MARK: - Actions / Selectors
+    
     /// Back Button Action
+    /// 
     /// - Parameter sender: the Button
     @objc func didTapBack(_ sender: Button) {
-        viewModel.router.dismissThird()
+        viewModel.router.back()
     }
 
+    // MARK: - ThirdViewController
+    
     /// Custom Initializer
     init(viewModel: ThirdViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
-    /// Required Initializer (should never be called)
-    /// - Parameter coder: A Decoder
-    required init?(coder: NSCoder) {
-        self.viewModel = ThirdViewModel(
-            router: RootRouter(
-                rootViewController: NavigationController()
-            )
-        )
-        super.init(coder: coder)
-    }
-    
-
-    /// Called when view property has been loaded
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
-        view.addSubview(backButton)
+    /// Call this in `viewDidLoad()` after configuring the view
+    private func setupViews() {
         backButton.setTitle(viewModel.backText, for: .normal)
+        
         backButton.addTarget(
             self,
             action: #selector(ThirdViewController.didTapBack(_:)),
             for: .touchUpInside
         )
+        
+        view.addSubview(backButton)
+    }
+
+    /// Call this after `setupViews()` to set and activate AutoLayout constraints
+    private func setupConstraints() {
         backButton.centerXAnchor.constraint(
             equalTo: view.centerXAnchor
         ).isActive = true
@@ -59,6 +60,23 @@ class ThirdViewController: UIViewController {
             equalTo: view.centerYAnchor,
             constant: -54.0
         ).isActive = true
+    }
+    
+    // MARK: - UIViewController
+    
+    /// Required Initializer (should never be called)
+    ///
+    /// - Parameter coder: A Decoder
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    /// Called after the view controller has loaded its view hierarchy into memory.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1.0)
+        setupViews()
+        setupConstraints()
     }
 
 }

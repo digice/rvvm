@@ -9,16 +9,19 @@
 import Foundation
 
 class ThirdViewModel {
-    
+
+    // MARK: - Properties
+
     /// The router that handles our navigation
-    let router: RootRouter
+    let router: ThirdRouter
 
     /// Text for the "Back" button
     let backText = "Back To Second"
 
     /// Initialize the ViewModel
+    /// 
     /// - Parameter router: The The router that handles our navigation
-    init(router: RootRouter) {
+    init(router: ThirdRouter) {
         self.router = router
     }
 
