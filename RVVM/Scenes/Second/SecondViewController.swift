@@ -11,7 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
 
     /// Where we keep the view's data
-    let viewModel = SecondViewModel()
+    let viewModel: SecondViewModel
     
     /// Navigate to the previous view
     let backButton = Button()
@@ -22,14 +22,30 @@ class SecondViewController: UIViewController {
     /// Back Button Action
     /// - Parameter sender: the Button
     @objc func didTapBack(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        viewModel.router.dismissSecond()
     }
     
     /// Next Button Action
     /// - Parameter sender: the Button
     @objc func didTapNext(_ sender: UIButton) {
-        let third = ThirdViewController()
-        self.navigationController?.pushViewController(third, animated: true)
+        viewModel.router.showThird()
+    }
+
+    /// Custom Initializer
+    init(viewModel: SecondViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    /// Required Initializer (should never be called)
+    /// - Parameter coder: A Decoder
+    required init?(coder: NSCoder) {
+        self.viewModel = SecondViewModel(
+            router: RootRouter(
+                rootViewController: NavigationController()
+            )
+        )
+        super.init(coder: coder)
     }
     
     /// Called when view property has been loaded

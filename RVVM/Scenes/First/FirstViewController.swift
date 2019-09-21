@@ -11,7 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
     
     /// Where we keep the view's data
-    let viewModel = FirstViewModel()
+    let viewModel: FirstViewModel
     
     /// Navigate to the next view
     let nextButton = Button()
@@ -19,8 +19,24 @@ class FirstViewController: UIViewController {
     /// Next Button Action
     /// - Parameter sender: the Button
     @objc func didTapNext(_ sender: UIButton) {
-        let second = SecondViewController()
-        self.navigationController?.pushViewController(second, animated: true)
+        self.viewModel.router.showSecond()
+    }
+    
+    /// Custom Initializer
+    init(viewModel: FirstViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    /// Required Initializer (should never be called)
+    /// - Parameter coder: A Decoder
+    required init?(coder: NSCoder) {
+        self.viewModel = FirstViewModel(
+            router: RootRouter(
+                rootViewController: NavigationController()
+            )
+        )
+        super.init(coder: coder)
     }
     
     /// Called when view property has been loaded

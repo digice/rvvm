@@ -23,8 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             window.makeKeyAndVisible()
-            let navVC = NavigationController(rootViewController: FirstViewController())
-            window.rootViewController = navVC
+            let rootViewController = NavigationController()
+            let router = RootRouter(rootViewController: rootViewController)
+            window.rootViewController = rootViewController
+            router.showFirst()
         }
         return true
     }
