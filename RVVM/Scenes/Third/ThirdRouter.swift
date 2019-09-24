@@ -8,14 +8,15 @@
 
 import UIKit
 
-final class ThirdRouter: UIRouter {
+/// Navigation for the third view
+final class ThirdRouter: NavigationRouter {
 
     // MARK: - Properties
     
     /// Where we will send routing requests to
     var rootRouter: RootRouter
     
-    // MARK: - ThirdRouter
+    // MARK: - Methods
     
     /// Next navigation
     func next() {
@@ -27,9 +28,9 @@ final class ThirdRouter: UIRouter {
         rootRouter.dismissThird()
     }
     
-    // MARK: - UIRouter
+    // MARK: - NavigationRouter Methods
     
-    /// UIRouter init
+    /// NavigationRouter init
     ///
     /// - Parameter rootRouter: the RootRouter instance
     required init(rootRouter: RootRouter) {
@@ -46,10 +47,9 @@ final class ThirdRouter: UIRouter {
     /// but rather than instantiating it directly, this method will
     /// create the viewModel, with its dependency on `ThirdRouter`,
     /// which in turn depends on an instance of `RootRouter`
-    static func viewController(rootRouter: RootRouter) -> UIViewController {
+    static func createViewController(rootRouter: RootRouter) -> UIViewController {
         let router = ThirdRouter(rootRouter: rootRouter)
         let viewModel = ThirdViewModel(router: router)
         return ThirdViewController(viewModel: viewModel)
     }
-    
 }

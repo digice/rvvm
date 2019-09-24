@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Data handling for the second view
 class SecondViewModel {
 
     // MARK: - Properties
@@ -21,7 +22,7 @@ class SecondViewModel {
     /// Text for the "Next" button
     let nextText = "Next to Third"
 
-    // MARK: - SecondViewModel
+    // MARK: - Methods
     
     /// Initialize the ViewModel
     /// 

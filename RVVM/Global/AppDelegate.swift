@@ -9,9 +9,14 @@
 import UIKit
 
 @UIApplicationMain
+/// The delegate for the `UIApplicationMain` singleton
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: - Properties
+    
     var window: UIWindow?
+    
+    // MARK: - UIApplicationDelegate Methods
     
     /// Override point for customization
     /// - Parameter application: the UIApplication singleton
@@ -30,5 +35,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
 }

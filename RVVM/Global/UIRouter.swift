@@ -8,7 +8,8 @@
 
 import UIKit
 
-protocol UIRouter {
+/// Required properties and methods for a module's Router
+protocol NavigationRouter {
 
     /// Strong reference to the `RootRouter`
     var rootRouter: RootRouter { get }
@@ -27,6 +28,6 @@ protocol UIRouter {
     /// Factory method to create the module's `ViewController`
     ///
     /// - Parameter rootRouter: The `RootRouter` instance
-    static func viewController(rootRouter: RootRouter) -> UIViewController
+    static func createViewController(rootRouter: RootRouter) -> UIViewController
 
 }

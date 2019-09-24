@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Data handling for the first view
 final class FirstViewModel {
     
     // MARK: - Properties
@@ -18,7 +19,7 @@ final class FirstViewModel {
     /// Text for the "Next" button
     let nextText = "Next to Second"
     
-    // MARK: - FirstViewModel
+    // MARK: - Methods
     
     /// Initialize the ViewModel
     /// 
@@ -26,5 +27,4 @@ final class FirstViewModel {
     init(router: FirstRouter) {
         self.router = router
     }
-    
 }

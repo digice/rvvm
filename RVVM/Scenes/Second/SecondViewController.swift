@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Controller for the second view to appear
 class SecondViewController: UIViewController {
 
     // MARK: - Properties
@@ -15,13 +16,15 @@ class SecondViewController: UIViewController {
     /// Where we keep the view's data
     let viewModel: SecondViewModel
     
-    // MARK: - Outlets / Subviews
+    // MARK: - Subviews
     
     /// Navigate to the previous view
     private let backButton = Button()
 
     /// Navigate to the next view
     private let nextButton = Button()
+
+    // MARK: - Actions
 
     /// Back Button Action
     ///
@@ -30,8 +33,6 @@ class SecondViewController: UIViewController {
         viewModel.router.back()
     }
     
-    // MARK: - Actions / Selectors
-    
     /// Next Button Action
     /// 
     /// - Parameter sender: the Button
@@ -39,7 +40,7 @@ class SecondViewController: UIViewController {
         viewModel.router.next()
     }
 
-    // MARK: - SecondViewController
+    // MARK: - Methods
     
     /// Custom Initializer
     init(viewModel: SecondViewModel) {
@@ -54,13 +55,13 @@ class SecondViewController: UIViewController {
 
         backButton.addTarget(
             self,
-            action: #selector(SecondViewController.didTapBack(_:)),
+            action: Action.didTapBack,
             for: .touchUpInside
         )
 
         nextButton.addTarget(
             self,
-            action: #selector(SecondViewController.didTapNext(_:)),
+            action: Action.didTapNext,
             for: .touchUpInside
         )
         
@@ -89,7 +90,7 @@ class SecondViewController: UIViewController {
         ).isActive = true
     }
     
-    // MARK: - UIViewController
+    // MARK: - UIViewController Methods
     
     /// Required Initializer (should never be called)
     ///
@@ -105,5 +106,18 @@ class SecondViewController: UIViewController {
         setupViews()
         setupConstraints()
     }
+}
 
+/// Selectors
+extension SecondViewController {
+
+    /// Abstracts ugly `#selector` syntax away from implementation
+    struct Action {
+        
+        /// Selector for the back button action
+        static let didTapBack = #selector(SecondViewController.didTapBack(_:))
+
+        /// Selector for the next button action
+        static let didTapNext = #selector(SecondViewController.didTapNext(_:))
+    }
 }

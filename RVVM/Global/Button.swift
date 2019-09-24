@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// A subclass of `UIButton` with a system blue background
+/// 12px corner radius and white text.
 class Button: UIButton {
     
     /// Initialize a new Button instance
@@ -21,15 +23,16 @@ class Button: UIButton {
     }
     
     /// Designated initializer
+    ///
     /// - Parameter frame: Where the view should appear
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     /// Required initializer (not implemented)
+    /// 
     /// - Parameter frame: Where the view should appear
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
 }

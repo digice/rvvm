@@ -8,14 +8,15 @@
 
 import UIKit
 
-final class SecondRouter: UIRouter {
+/// Navigation for the second view
+final class SecondRouter: NavigationRouter {
  
     // MARK: - Properties
     
     /// Where we will send routing requests to
     var rootRouter: RootRouter
     
-    // MARK: - SecondRouter
+    // MARK: - Methods
     
     /// Next navigation
     func next() {
@@ -27,9 +28,9 @@ final class SecondRouter: UIRouter {
         rootRouter.dismissSecond()
     }
 
-    // MARK: - UIRouter
+    // MARK: - NavigationRouter Methods
     
-    /// UIRouter init
+    /// NavigationRouter init
     ///
     /// - Parameter rootRouter: the RootRouter instance
     required init(rootRouter: RootRouter) {
@@ -46,10 +47,9 @@ final class SecondRouter: UIRouter {
     /// but rather than instantiating it directly, this method will
     /// create the viewModel, with its dependency on `SecondRouter`,
     /// which in turn depends on an instance of `RootRouter`
-    static func viewController(rootRouter: RootRouter) -> UIViewController {
+    static func createViewController(rootRouter: RootRouter) -> UIViewController {
         let router = SecondRouter(rootRouter: rootRouter)
         let viewModel = SecondViewModel(router: router)
         return SecondViewController(viewModel: viewModel)
     }
-    
 }

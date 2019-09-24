@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Grand Central Navigation
 class RootRouter {
  
     // MARK: - Properties
@@ -27,14 +28,14 @@ class RootRouter {
     /// Navigate to the first view at startup
     func showFirst() {
         navigationController.pushViewController(
-            FirstRouter.viewController(rootRouter: self),
+            FirstRouter.createViewController(rootRouter: self),
             animated: false
         )
     }
     
     /// Navigate to the second view from the first view
     func showSecond() {
-        let viewController = SecondRouter.viewController(rootRouter: self)
+        let viewController = SecondRouter.createViewController(rootRouter: self)
         navigationController.pushViewController(viewController, animated: true)
     }
     
@@ -45,7 +46,7 @@ class RootRouter {
     
     /// Navigate to the third view from the second view
     func showThird() {
-        let viewController = ThirdRouter.viewController(rootRouter: self)
+        let viewController = ThirdRouter.createViewController(rootRouter: self)
         navigationController.pushViewController(viewController, animated: true)
     }
     

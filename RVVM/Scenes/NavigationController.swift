@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// The parent view for all views
 class NavigationController: UINavigationController {
     
     /// Called when view property has been loaded

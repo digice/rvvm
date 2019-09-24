@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Controller for the first view to appear
 class FirstViewController: UIViewController {
 
     // MARK: - Properties
@@ -15,13 +16,13 @@ class FirstViewController: UIViewController {
     /// Where we keep the view's data
     let viewModel: FirstViewModel
 
-    // MARK: - Outlets / Subviews
+    // MARK: - Subviews
 
     /// Navigate to the next view
     let nextButton = Button()
     
 
-    // MARK: - Actions / Selectors
+    // MARK: - Actions
 
     /// Next Button Action
     ///
@@ -30,7 +31,7 @@ class FirstViewController: UIViewController {
         self.viewModel.router.next()
     }
     
-    // MARK: - FirstViewController
+    // MARK: - Methods
     
     /// Custom Initializer
     init(viewModel: FirstViewModel) {
@@ -46,7 +47,7 @@ class FirstViewController: UIViewController {
         
         nextButton.addTarget(
             self,
-            action: #selector(FirstViewController.didTapNext(_:)),
+            action: Action.didTapNext,
             for: .touchUpInside
         )
         
@@ -65,7 +66,7 @@ class FirstViewController: UIViewController {
         ).isActive = true
     }
 
-    // MARK: - UIViewController
+    // MARK: - UIViewController Methods
     
     /// Required Initializer (should never be called)
     ///
@@ -81,5 +82,15 @@ class FirstViewController: UIViewController {
         setupViews()
         setupConstraints()
     }
+}
 
+/// Selectors
+extension FirstViewController {
+
+    /// Abstracts ugly `#selector` syntax away from implementation
+    struct Action {
+
+        /// Selector for the next button action
+        static let didTapNext = #selector(FirstViewController.didTapNext(_:))
+    }
 }

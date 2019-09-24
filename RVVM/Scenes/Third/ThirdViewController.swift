@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Controller for the third view
 class ThirdViewController: UIViewController {
 
     // MARK: - Properties
@@ -15,12 +16,12 @@ class ThirdViewController: UIViewController {
     /// Where we keep the view's data
     let viewModel: ThirdViewModel
     
-    // MARK: - Outlets / Subviews
+    // MARK: - Subviews
     
     /// Navigate to the previous view
     let backButton = Button()
     
-    // MARK: - Actions / Selectors
+    // MARK: - Actions
     
     /// Back Button Action
     /// 
@@ -29,7 +30,7 @@ class ThirdViewController: UIViewController {
         viewModel.router.back()
     }
 
-    // MARK: - ThirdViewController
+    // MARK: - Methods
     
     /// Custom Initializer
     init(viewModel: ThirdViewModel) {
@@ -43,7 +44,7 @@ class ThirdViewController: UIViewController {
         
         backButton.addTarget(
             self,
-            action: #selector(ThirdViewController.didTapBack(_:)),
+            action: Action.didTapBack,
             for: .touchUpInside
         )
         
@@ -62,7 +63,7 @@ class ThirdViewController: UIViewController {
         ).isActive = true
     }
     
-    // MARK: - UIViewController
+    // MARK: - UIViewController Methods
     
     /// Required Initializer (should never be called)
     ///
@@ -78,5 +79,15 @@ class ThirdViewController: UIViewController {
         setupViews()
         setupConstraints()
     }
+}
 
+/// Selectors
+extension ThirdViewController {
+
+    /// Abstracts ugly `#selector` syntax away from implementation
+    struct Action {
+
+        /// Selector for the back button action
+        static let didTapBack = #selector(ThirdViewController.didTapBack(_:))
+    }
 }

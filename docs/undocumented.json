@@ -1,0 +1,26 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/digices/Developer/Projects/RVVM/rvvm/RVVM/Global/AppDelegate.swift",
+      "line": 13,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/digices/Developer/Projects/RVVM/rvvm/RVVM/Global/AppDelegate.swift",
+      "line": 17,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/digices/Developer/Projects/RVVM/rvvm/RVVM/Scenes/RootRouter.swift",
+      "line": 16,
+      "symbol": "RootRouter.navigationController",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/digices/Developer/Projects/RVVM/rvvm"
+}

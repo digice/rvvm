@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Data handling for the third view
 class ThirdViewModel {
 
     // MARK: - Properties
@@ -24,5 +25,4 @@ class ThirdViewModel {
     init(router: ThirdRouter) {
         self.router = router
     }
-
 }
